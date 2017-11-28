@@ -19,10 +19,10 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Thread)
 public class AddTestForLinkedAndArray {
 
-    @Param({"4", "40", "400", "4000", "20000", "100000"})
-    int size;
-    ArrayList<Integer> arrayList;
-    LinkedList<Integer> linkedList;
+    @Param({"4", "40", "400", "4000", "20000"})
+    private int size;
+    private ArrayList<Integer> arrayList;
+    private LinkedList<Integer> linkedList;
 
     @Setup(Level.Iteration)
     public void setup() {
