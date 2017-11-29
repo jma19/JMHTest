@@ -32,7 +32,6 @@ public class StringConcatenation {
         return res;
     }
 
-
     @Benchmark
     public String testStringBuilder() {
         StringBuilder builder = new StringBuilder();

@@ -20,11 +20,11 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Benchmark)
 public class ForkJoinBenchmark {
 
-    @Param({"200", "400", "800", "1600"})
-    public int N;
+    @Param({"200", "400", "800", "1600", "3200"})
+    private int N;
 
-    public List<RecursiveTask<Double>> tasks;
-    public ForkJoinPool pool = new ForkJoinPool();
+    private List<RecursiveTask<Double>> tasks;
+    private ForkJoinPool pool = new ForkJoinPool();
 
     @Setup
     public void init() {
@@ -65,8 +65,8 @@ public class ForkJoinBenchmark {
                 .include(ForkJoinBenchmark.class.getSimpleName())
                 .resultFormat(ResultFormatType.CSV)
                 .result("ForkJoin_8.csv")
-                .warmupIterations(5)
-                .measurementIterations(5)
+                .warmupIterations(10)
+                .measurementIterations(10)
                 .forks(1)
                 .build();
 
